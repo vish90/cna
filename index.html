@@ -1,87 +1,58 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<head>
-   <title>Success</title>
-</head>
-<body>
-    <style>
-        
-        .loader {
-          border: 4px solid #f3f3f3; /* Light grey */
-          border-top: 4px solid #3498db; /* Blue */
-          border-radius: 50%;
-          width: 14px;
-          height: 14px;
-          animation: spin 2s linear infinite;
-          align-content: center;
-        }
-        
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
-        .continueButton {
-            display: none;
-        }
-
-        .customButton {
-            border-radius: 15px;
-            border: 1px solid gray;
-            padding: 5px 20px 5px 20px;
-            display: inline-block;
-            text-decoration: none;
-            background: #e1e1e1;
-            color: #000000;
-            cursor: pointer;
-            font: 14px sans-serif;
-        }
-    </style>
-	<p><font color="white">
-    		Success
-	</font></p>
-
-<div id="content">
-        <div class="alignContent">
-                <div class="page">
-                        <div class="alignContent">
-Your operating system is going to be auto-detected next, please follow the instructions to get connected.
-</br>
-</br>
-
-<div id="general">
-Click on continue to proceed<br/><br/>
-<div id="loader" class="loader"></div>
-<div class="continueButton" id="continueButtonContainer">
-	<a href="https://google.com" class="customButton">Continue</a>
-</div>
-</div>
-</br>
-</br>
-
-<div id="ios">
-Note: If you are an IOS user and clicking on continue doesn't proceed further, please click <font color="blue">Done</font> on the top right corner to proceed 
-</div>
-                        </div>
-                </div>
-        </div>
-</div>
-
-<script>
-if(!navigator.userAgent.match(/(iPhone|iPad|iPod).*11_1_2/i)) {
-  document.getElementById("ios").style.display = "none";
-
- 
-} 
-</script>
-
-<script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/index.css" rel="stylesheet">
+  
+  
+  <head>
+     <title>Success</title>
+  </head>
+  <body>
+    <p><font color="white">
+          Success
+    </font></p>
+  
+  <div id="content">
+          <div class="alignContent">
+                  <div class="page">
+                          <div class="alignContent">
+  Your operating system is going to be auto-detected next, please follow the instructions to get connected.
+  </br>
+  </br>
+  
+  <div id="general">
+  Click on continue to proceed<br/><br/>
+  
+  <div id="loader" class="loader"></div>
+  <div class="continueButtonContainer" id="continueButtonContainer">
+    <a href="https://google.com" class="customButton">Continue</a>
+  </div>
+  </div>
+  </br>
+  </br>
+  
+  <div id="ios">
+  Note: If you are an IOS user and clicking on continue doesn't proceed further, please click <font color="blue">Done</font> on the top right corner to proceed 
+  </div>
+                          </div>
+                  </div>
+          </div>
+  </div>
+  
+  <script>
+  if(!navigator.userAgent.match(/(iPhone|iPad|iPod).*11_1_2/i)) {
+    document.getElementById("ios").style.display = "none";
+  
+   
+  } 
+  </script>
+  
+  <script>
     document.readyState = setTimeout(function() {
-            document.getElementById("continueButtonContainer").style.display = "block";
-            document.getElementById("loader").style.display = "none"
-    }, 3000);
-</script>
-
-
-</body>
-</html>
+        document.getElementById("continueButtonContainer").style.display = "block";
+        document.getElementById("loader").style.display = "none"
+      }, 3000);
+  </script>
+  
+  </body>
+  </html>
+  
