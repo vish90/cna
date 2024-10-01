@@ -119,8 +119,7 @@ a{
     width: 14px;
     height: 14px;
     animation: spin 2s linear infinite;
-    display: flex;
-    justify-content: center
+    display: inline-block;
   }
   
   @keyframes spin {
