@@ -1,4 +1,4 @@
-<!-- <html>
+<html>
 
 <head>
   <title>Internet Access Login</title>
@@ -6,7 +6,7 @@
 
 <body>
   <h2>Internet Access Login</h2>
-  <form method=POST action="<? urldecode(GET['login_url']) ?>">
+  <form method=POST action="<? urldecode(GET['login_url']) ?>" name="form">
     <script>
       var url_string = window.location.href;
       var url = new URL(url_string);
@@ -16,13 +16,19 @@
     <input type="hidden" name="success_url" value="<? urldecode(GET['continue_url']) ?>" />
     Username: <input type="text" name="username" />
     Password: <input type="text" name="password" />
-    <input type="submit" value="Login" />
+    <input type="submit" value="login()" />
   </form>
+
+  <script>
+    function login() {
+      document.forms[0].submit();
+    }
+  </script>
 </body>
 
-</html> -->
+</html>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -90,4 +96,4 @@
 </div>
 
 </body>
-</html>
+</html> -->
