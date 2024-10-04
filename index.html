@@ -7,6 +7,12 @@
 <body>
   <h2>Internet Access Login</h2>
   <form method=POST action="<? urldecode(GET['login_url']) ?>">
+    <script>
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var c = url.searchParams.get("login_url");
+      alert(c);
+    </script>
     <input type="hidden" name="success_url" value="<? urldecode(GET['continue_url']) ?>" />
     Username: <input type="text" name="username" />
     Password: <input type="text" name="password" />
