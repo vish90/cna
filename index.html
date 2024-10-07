@@ -30,17 +30,16 @@
     // Function to extract and decode login_url
     document.getElementById("loginUrlDiv").innerText = extractAndPostLoginUrl()
 
-    document.getElementById('link').addEventListener('click', function () {
-      // Replace with your desired URL
-      const url = 'https://captiveportal-staging.securew2.net/public/2222/TLS_Local';
-      // Attempt to open the URL
-      window.location.href = url; // This should redirect to the URL
-    });
   </script>
 
-  <button id = 'link'>
-    go to chrome
-  </div>
+  <button id="link">Go to Chrome</button>
+
+  <script>
+    document.getElementById('link').onclick = function () {
+      const url = 'https://captiveportal-staging.securew2.net/public/2222/TLS_Local';
+      window.open(url, '_blank');
+    };
+  </script>
   <!-- <a href="https://captiveportal-staging.securew2.net/public/2222/TLS_Local" id='link'>
     <button>Go to Profile</button>
   </a> -->
