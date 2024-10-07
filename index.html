@@ -5,38 +5,38 @@
 </head>
 
 <body>
-  
-  <body>
-    <script>
-      // Function to extract and decode login_url
-      function extractAndPostLoginUrl() {
-        // Get current page URL
-        const queryString = window.location.search
-        const urlParams = new URLSearchParams(queryString)
-  
-        // Get the login_url parameter
-        let loginUrl = urlParams.get("login_url")
-  
-        if (loginUrl) {
-          // Decode the login_url
-          loginUrl = decodeURIComponent(loginUrl)
-        } else {
-          console.log("login_url not found")
-        }
 
-        return loginUrl;
+  <div id="loginUrlDiv" style="border: 1px solid black; padding: 10px"></div>
+
+  <script>
+    function extractAndPostLoginUrl() {
+      // Get current page URL
+      const queryString = window.location.search
+      const urlParams = new URLSearchParams(queryString)
+
+      // Get the login_url parameter
+      let loginUrl = urlParams.get("login_url")
+
+      if (loginUrl) {
+        // Decode the login_url
+        loginUrl = decodeURIComponent(loginUrl)
+      } else {
+        loginUrl = "NA"
+        console.log("login_url not found")
       }
-  
-      document.getElementById("loginUrlDiv").innerText = extractAndPostLoginUrl();
-    </script>
-  
-    <div id="loginUrlDiv" style="border: 1px solid black; padding: 10px"></div>
-  
-    <a href="https://cloud-staging.securew2.com/public/2222/TLS_Local/">
-      <button>Go to Profile</button>
-    </a>
-  </body>
-  
+
+      return loginUrl
+    }
+    // Function to extract and decode login_url
+    document.getElementById("loginUrlDiv").innerText = extractAndPostLoginUrl()
+  </script>
+
+  <a href="https://cloud-staging.securew2.com/public/2222/TLS_Local/">
+    <button>Go to Profile</button>
+  </a>
+
+
+
   <!-- <h2>Internet Access Login</h2>
   <form method=POST action="<? urldecode(GET['login_url']) ?>" name="form">
     <script>
