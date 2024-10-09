@@ -43,7 +43,8 @@
         e.preventDefault();
         const url = this.href;
         console.log(url);
-        prompt("Copy this link and paste it in the regular Chrome browser:", url);
+        window.open(url, "_blank");
+        // prompt("Copy this link and paste it in the regular Chrome browser:", url);
       });
     }
   </script>
