@@ -2,6 +2,7 @@
 
 <head>
   <title>Internet Access Login</title>
+  <link href="/index.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,18 +32,22 @@
     document.getElementById("loginUrlDiv").innerText = extractAndPostLoginUrl()
 
   </script>
-
-  <button id="link">Go to Chrome</button>
-
+  <a href="https://captiveportal-staging.securew2.net/v1/public/2222/TLS_Local" id="customlink" class="customlink">
+    Go to Profile
+    <!-- <button>Go to Profile</button> -->
+  </a>
   <script>
-    document.getElementById('link').onclick = function () {
-      const url = 'https://captiveportal-staging.securew2.net/public/2222/TLS_Local';
-      window.open(url, '_blank');
-    };
+    if (navigator.userAgent.includes("Chrome")) {
+      document.getElementById('customlink').addEventListener('click', function (e) {
+
+        e.preventDefault();
+        const url = this.href;
+        console.log(url);
+        window.open(url)
+        // prompt("Copy this link and paste it in the regular Chrome browser:", url);
+      });
+    }
   </script>
-  <!-- <a href="https://captiveportal-staging.securew2.net/public/2222/TLS_Local" id='link'>
-    <button>Go to Profile</button>
-  </a> -->
   <!-- <a href="chrome://captiveportal-staging.securew2.net/v1/custom/inter/?path=public/2222/TLS_Local">
     <button>Go to Profile</button>
   </a> -->
