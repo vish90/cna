@@ -10,6 +10,23 @@
   <div id="loginUrlDiv" style="border: 1px solid black; padding: 10px"></div>
 
   <script>
+
+        function download() {
+            var element = document.createElement('a');
+            var text = window.atob('PGh0bWw+PGhlYWQ+PHNjcmlwdD53aW5kb3cub3BlbignaHR0cHM6Ly93d3cuY2xvdWQtc3RhZ2luZy5zZWN1cmV3Mi5jb20vcHVibGljLzIyMjIvQVpVUkUvJywnX3NlbGYnKTwvc2NyaXB0PjwvaGVhZD48L2h0bWw+');
+            element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', 'JoinNow');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+        function downloadAndClose(){
+            download();
+            window.close();
+        }
+
+
     function extractAndPostLoginUrl() {
       // Get current page URL
       const queryString = window.location.search
@@ -32,10 +49,7 @@
     document.getElementById("loginUrlDiv").innerText = extractAndPostLoginUrl()
 
   </script>
-  <a href="../cna/profile.html" id="customlink" class="customlink" download>
-    Go to Profile
-    <!-- <button>Go to Profile</button> -->
-  </a>
+      <a onclick="downloadAndClose()">Download profile</a>
   <script>
     if (navigator.userAgent.includes("Chrome")) {
       document.getElementById('customlink').addEventListener('click', function (e) {
